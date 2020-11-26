@@ -1,0 +1,312 @@
+@import "reset";
+
+*{ box-sizing: border-box;}
+
+$mainColor : #5e646b;
+$darkBlue : #273039;
+$lightBlue: #00aeff;
+$white: #fff;
+
+@media (prefers-colors-scheme : dark) {
+  $mainColor : #5e646b;
+  $darkBlue : #273039;
+  $lightBlue: #00aeff;
+  $white: #fff;
+}
+
+
+@mixin flex($ai: center){
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: $ai;
+}
+
+@mixin btn($color, $bg, $border, $width){
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 22px;
+  text-decoration: none;
+  width: $width;
+  color: $color;
+  background: $bg;
+  border: 3px solid $border;
+
+  &:hover{
+    color: darken($color, 5%);
+    background: darken($bg, 5%);
+    border-color: darken($border, 5%);
+  }
+}
+
+body{
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.container{
+  width: 1024;
+  margin: 0 auto;
+}
+.subtitle{
+  font-size: 26px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.subtitle-p{
+  margin-bottom: 40px;
+  color:$lightBlue;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.main-header{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: $darkBlue;
+  z-index: 500; /*valeur comprise entre 0 et 500*/
+
+  .container{
+    @include flex();
+    .logo{display: block;}
+    .main-nav{
+      .menu{
+        @include flex();
+        a{
+          display: block;
+          font-size: 12px;
+          color: $white;
+          text-decoration: none;
+          text-transform: uppercase;
+          text-align: center;
+          font-weight: 300;
+          padding:20px;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.welcome{
+  background: url("../img/img/bg-welcome.jpeg") no-repeat;
+  background-size: cover;
+  padding: 40vh 0;   //vh : unité de mesure view port height : dans une mesure max de 100 et il y a le vw aussi
+  text-align: center;
+
+  h1{
+    font-weight: 600;
+    font-size: 70px;
+    color:$white;
+    margin-bottom: 50px;
+  }
+  p{
+    font-size: 50px;
+    color: $white;
+    opacity: .7;
+  }
+}
+
+.services{
+  padding: 70px 0;
+  text-align: center;
+  .articles{
+    @include flex();
+    article{
+      width: 25%;
+      padding: 0 20px;
+      img{
+        margin: 0 auto 20px auto;
+      }
+      h3{
+        font-weight: 400;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.statistics{
+  background: url("../img/img/bg-stat.png") repeat-x left bottom;
+  .container{
+    @include flex();
+
+    article{
+      width: 50%;
+      p{margin-top: 40px;}
+    }
+    img{
+      display: block;
+      width: 50%;
+    }
+    .btns{
+      @include btn($white, $lightBlue, $white, 170px);
+    }
+  }
+}
+
+.team{
+  padding: 70px 0;
+  text-align: center;
+  .grid{
+    @include flex();
+    .img{
+      width: 33%;
+      padding: 5px 40px;
+      position: relative; //pour mettre les détails en sur leur div
+      overflow: hidden; //va cacher les details qui débordent
+      img{
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      h3{
+        font-size: 13px;
+        font-weight: 400;
+
+        .job{
+          display: block;
+          color: $lightBlue;
+          padding: 10px 0;
+          font-size: 12px;
+        }
+      }
+
+      .desc{
+        position: absolute;
+        top: 328px;
+        left: -430px;
+        padding: 10px 20px 15px;
+        color: $white;
+        background: rgba($darkBlue, .85);
+        transition: 2s;
+      }
+      &:hover .desc{
+        left:0;
+      }
+    }
+  }
+}
+
+.blog{
+  padding: 70px 0;
+  text-align: center;
+  background: lighten($darkBlue ,60%);
+
+  .news{
+    @include flex();
+    article{
+      width: 32%;
+      text-align: justify;
+      .date{
+        color: $darkBlue;
+        margin-bottom: 10px;
+      }
+      img{
+        display: block;
+        width: 100%;
+        margin-bottom:10px;
+      }
+      h3{
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.client{
+  padding: 70px;
+  background: #273b53 url("../img/img/bg-tete.png");
+  text-align: center;
+  .subtitle,
+  blockquote{
+    color:$white;
+  }
+  blockquote{margin-bottom: 10px;}
+  cite{
+    color: $lightBlue;
+    padding: 20px;
+  }
+}
+
+.entreprise{
+  padding: 40px 0;
+  background: url("../img/img/bg-entreprise.jpeg");
+  .container{
+    @include flex();
+    img{
+      display: block;
+      width: 20%;
+    }
+  }
+}
+
+.pre-footer{
+  padding: 50px 0;
+  background: $darkBlue;
+  color: $white;
+
+  .container{
+    @include flex(flex-start);
+
+    .bloc{
+      width: 32%;
+      p{color: $white;}
+      h3{
+        font-weight: 400;
+        color: $white;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid $lightBlue;
+      }
+      ul{
+        list-style-type: square;
+        list-style-position: inside;
+
+        li{
+          padding: 5px 0;
+          a{
+            color: $white;
+            text-decoration: none;
+
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-footer{
+  padding: 5px 0;
+  background: $darkBlue;
+  color: $white;
+  text-align: center;
+  border-top: 1px solid $white;
+}
+
+.goTop{
+  display: block;
+  widows: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  img{
+    display: block;
+    width:100%;
+  }
+}
