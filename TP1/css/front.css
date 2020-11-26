@@ -1,0 +1,363 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.container {
+  width: 1024;
+  margin: 0 auto;
+}
+
+.subtitle {
+  font-size: 26px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.subtitle-p {
+  margin-bottom: 40px;
+  color: #00aeff;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.main-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: #273039;
+  z-index: 500;
+  /*valeur comprise entre 0 et 500*/
+}
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.main-header .container .logo {
+  display: block;
+}
+.main-header .container .main-nav .menu {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.main-header .container .main-nav .menu a {
+  display: block;
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 300;
+  padding: 20px;
+}
+.main-header .container .main-nav .menu a:hover {
+  text-decoration: underline;
+}
+
+.welcome {
+  background: url("../img/img/bg-welcome.jpeg") no-repeat;
+  background-size: cover;
+  padding: 40vh 0;
+  text-align: center;
+}
+.welcome h1 {
+  font-weight: 600;
+  font-size: 70px;
+  color: #fff;
+  margin-bottom: 50px;
+}
+.welcome p {
+  font-size: 50px;
+  color: #fff;
+  opacity: 0.7;
+}
+
+.services {
+  padding: 70px 0;
+  text-align: center;
+}
+.services .articles {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.services .articles article {
+  width: 25%;
+  padding: 0 20px;
+}
+.services .articles article img {
+  margin: 0 auto 20px auto;
+}
+.services .articles article h3 {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.statistics {
+  background: url("../img/img/bg-stat.png") repeat-x left bottom;
+}
+.statistics .container {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.statistics .container article {
+  width: 50%;
+}
+.statistics .container article p {
+  margin-top: 40px;
+}
+.statistics .container img {
+  display: block;
+  width: 50%;
+}
+.statistics .container .btns {
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 22px;
+  text-decoration: none;
+  width: 170px;
+  color: #fff;
+  background: #00aeff;
+  border: 3px solid #fff;
+}
+.statistics .container .btns:hover {
+  color: #f2f2f2;
+  background: #009de6;
+  border-color: #f2f2f2;
+}
+
+.team {
+  padding: 70px 0;
+  text-align: center;
+}
+.team .grid {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.team .grid .img {
+  width: 33%;
+  padding: 5px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.team .grid .img img {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.team .grid .img h3 {
+  font-size: 13px;
+  font-weight: 400;
+}
+.team .grid .img h3 .job {
+  display: block;
+  color: #00aeff;
+  padding: 10px 0;
+  font-size: 12px;
+}
+.team .grid .img .desc {
+  position: absolute;
+  top: 328px;
+  left: -430px;
+  padding: 10px 20px 15px;
+  color: #fff;
+  background: rgba(39, 48, 57, 0.85);
+  transition: 2s;
+}
+.team .grid .img:hover .desc {
+  left: 0;
+}
+
+.blog {
+  padding: 70px 0;
+  text-align: center;
+  background: #bfc9d3;
+}
+.blog .news {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.blog .news article {
+  width: 32%;
+  text-align: justify;
+}
+.blog .news article .date {
+  color: #273039;
+  margin-bottom: 10px;
+}
+.blog .news article img {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.blog .news article h3 {
+  font-weight: 400;
+}
+
+.client {
+  padding: 70px;
+  background: #273b53 url("../img/img/bg-tete.png");
+  text-align: center;
+}
+.client .subtitle,
+.client blockquote {
+  color: #fff;
+}
+.client blockquote {
+  margin-bottom: 10px;
+}
+.client cite {
+  color: #00aeff;
+  padding: 20px;
+}
+
+.entreprise {
+  padding: 40px 0;
+  background: url("../img/img/bg-entreprise.jpeg");
+}
+.entreprise .container {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.entreprise .container img {
+  display: block;
+  width: 20%;
+}
+
+.pre-footer {
+  padding: 50px 0;
+  background: #273039;
+  color: #fff;
+}
+.pre-footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: flex-start;
+}
+.pre-footer .container .bloc {
+  width: 32%;
+}
+.pre-footer .container .bloc p {
+  color: #fff;
+}
+.pre-footer .container .bloc h3 {
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #00aeff;
+}
+.pre-footer .container .bloc ul {
+  list-style-type: square;
+  list-style-position: inside;
+}
+.pre-footer .container .bloc ul li {
+  padding: 5px 0;
+}
+.pre-footer .container .bloc ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.pre-footer .container .bloc ul li a:hover {
+  text-decoration: underline;
+}
+
+.main-footer {
+  padding: 5px 0;
+  background: #273039;
+  color: #fff;
+  text-align: center;
+  border-top: 1px solid #fff;
+}
+
+.goTop {
+  display: block;
+  widows: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.goTop img {
+  display: block;
+  width: 100%;
+}
+
+/*# sourceMappingURL=front.css.map */
